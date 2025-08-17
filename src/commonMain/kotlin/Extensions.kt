@@ -2,10 +2,10 @@ package dev.samoylenko.util.platform
 
 import kotlinx.io.files.Path
 
-object Extensions {
-    fun Path.readText() = FileSystem.readText(this)
-    fun Path.readTextOrNull() = FileSystem.readTextOrNull(this)
+public object Extensions {
+    public fun Path.readText(): String = FileSystem.readText(this)
+    public fun Path.readTextOrNull(): String? = FileSystem.readTextOrNull(this)
 
-    fun Path.readBytes() = FileSystem.readBytes(this)
-    fun Path.readBytesOrNull() = FileSystem.readBytesOrNull(this)
+    public fun Path.readBytes(): ByteArray = FileSystem.readBytes(this)
+    public fun Path.readBytesOrNull(): ByteArray? = FileSystem.readBytesOrNull(this)
 }

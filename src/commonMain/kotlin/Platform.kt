@@ -1,5 +1,5 @@
 package dev.samoylenko.util.platform
 
-enum class Platform {
+public enum class Platform {
     JVM, JS
 }

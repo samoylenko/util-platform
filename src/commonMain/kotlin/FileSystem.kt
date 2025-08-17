@@ -7,14 +7,14 @@ import kotlinx.io.files.SystemFileSystem
 import kotlinx.io.readByteArray
 import kotlinx.io.readString
 
-object FileSystem {
-    fun readText(path: Path) = SystemFileSystem.source(path).buffered().use { it.readString() }
-    fun readTextOrNull(path: Path) = runCatching { readText(path) }
+public object FileSystem {
+    public fun readText(path: Path): String = SystemFileSystem.source(path).buffered().use { it.readString() }
+    public fun readTextOrNull(path: Path): String? = runCatching { readText(path) }
         .onFailure { logger.error(throwable = it) { "Could not read file '${this}'" } }
         .getOrNull()
 
-    fun readBytes(path: Path) = SystemFileSystem.source(path).buffered().use { it.readByteArray() }
-    fun readBytesOrNull(path: Path) = runCatching { readBytes(path) }
+    public fun readBytes(path: Path): ByteArray = SystemFileSystem.source(path).buffered().use { it.readByteArray() }
+    public fun readBytesOrNull(path: Path): ByteArray? = runCatching { readBytes(path) }
         .onFailure { logger.error(throwable = it) { "Could not read file '${this}'" } }
         .getOrNull()
 }

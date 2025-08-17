@@ -9,20 +9,20 @@ internal expect fun getCurrentOsImpl(): OperatingSystem
 internal expect fun getEnvImpl(name: String): String?
 internal expect fun getHomeDirImpl(): String?
 
-object PlatformUtils {
+public object PlatformUtils {
 
     internal val logger = KotlinLogging.logger {}
 
-    fun getCurrentPlatform(): Platform = getCurrentPlatformImpl()
+    public fun getCurrentPlatform(): Platform = getCurrentPlatformImpl()
 
-    fun getCurrentOs(): OperatingSystem = getCurrentOsImpl()
+    public fun getCurrentOs(): OperatingSystem = getCurrentOsImpl()
 
-    fun getEnv(name: String): String? = getEnvImpl(name)
+    public fun getEnv(name: String): String? = getEnvImpl(name)
 
-    fun getHomeDir(): String? = getHomeDirImpl()
+    public fun getHomeDir(): String? = getHomeDirImpl()
 
     // TODO: dangerous function, need some controls to ensure it doesn't delete anything outside the directory
-    fun deleteRecursively(path: Path) {
+    public fun deleteRecursively(path: Path) {
         logger.warn { "Deleting $path" } // TODO: warnings for now just to watch what it deletes
 
         if (SystemFileSystem.metadataOrNull(path)?.isDirectory == true) {
@@ -32,7 +32,7 @@ object PlatformUtils {
         }
     }
 
-    fun walkRecursively(path: Path): Collection<Path> =
+    public fun walkRecursively(path: Path): Collection<Path> =
         if (SystemFileSystem.metadataOrNull(path)?.isDirectory == true)
             SystemFileSystem.list(path).flatMap { walkRecursively(it) }
         else listOf(path)

@@ -1,5 +1,5 @@
 package dev.samoylenko.util.platform
 
-enum class OperatingSystem {
+public enum class OperatingSystem {
     WINDOWS, POSIX, BROWSER
 }
