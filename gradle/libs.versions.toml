@@ -1,10 +1,9 @@
 [versions]
-kotlin = "2.1.20"
-kotlin-logging = "7.0.6"
-kotlinx-datetime = "0.6.2"
-kotlinx-io = "0.6.0"
-logback = "1.5.18"
-maven-publish = "0.31.0-rc2"
+kotlin = "2.4.21"
+kotlin-logging = "8.0.4"
+kotlinx-io = "0.9.1"
+logback = "1.6.5"
+maven-publish = "0.37.0"
 
 [plugins]
 kotlin-plugin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
@@ -13,6 +12,5 @@ maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publ
 
 [libraries]
 kotlin-logging = { group = "io.github.oshai", name = "kotlin-logging", version.ref = "kotlin-logging" }
-kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
 kotlinx-io = { group = "org.jetbrains.kotlinx", name = "kotlinx-io-core", version.ref = "kotlinx-io" }
 logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }

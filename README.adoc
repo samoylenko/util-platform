@@ -8,7 +8,6 @@ Currently only supports JVM and NodeJS platforms.
 
 == Using the library
 
-
 [source,kotlin]
 ----
 // ...
