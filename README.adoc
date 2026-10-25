@@ -13,6 +13,6 @@ Currently only supports JVM and NodeJS platforms.
 // ...
 
 dependencies {
-    implementation("dev.samoylenko:util-platform:0.1.0")
+    implementation("dev.samoylenko:util-platform:0.1.1")
 }
 ----
